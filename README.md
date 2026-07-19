@@ -650,11 +650,11 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
   
   <li><b>Optuna Rationale Implementation:</b> Alternative optimization paradigms were scrutinized, resulting in the explicit exclusion of the probabilistic <b>Optuna</b> framework to enforce a deterministic, reproducible, and highly stable grid-search strategy within the bounded parameter space.</li>
   
-  <li><b>Dynamic Decision Threshold Optimization:</b> The default 0.5 classification boundary was bypassed by deploying an automated probability threshold scanning loop, mathematically establishing **0.80** as the optimal operational cut-off to maximize minority class F1-Score metrics.</li>
+  <li><b>Dynamic Decision Threshold Optimization:</b> The default 0.5 classification boundary was bypassed by deploying an automated probability threshold scanning loop, mathematically establishing 0.80 as the optimal operational cut-off to maximize minority class F1-Score metrics.</li>
   
-  <li><b>Metric Achievement & False Alarm Reduction:</b> Focused optimization loops elevated the baseline failure detection capacity (F1-Score) from 68% to a robust **77%**, while locking the operational Precision rate at **89%** to minimize costly false maintenance alarms and driving the overall Macro F1-Score to **88%** to successfully clear the 85% corporate acceptance threshold.</li>
+  <li><b>Metric Achievement & False Alarm Reduction:</b> Focused optimization loops elevated the baseline failure detection capacity (F1-Score) from 68% to a robust 77%, while locking the operational Precision rate at 89% to minimize costly false maintenance alarms and driving the overall Macro F1-Score to 88% to successfully clear the 85% corporate acceptance threshold.</li>
   
-  <li><b>Pipeline Packaging & Asset Delivery:</b> The tuned **LightGBM** classifier and its optimized 0.80 operational threshold were compiled into a single production pipeline artifact named <code>lgb_binary_model.pkl</code> and delivered to the backend layer for seamless integration.</li>
+  <li><b>Pipeline Packaging & Asset Delivery:</b> The tuned LightGBM classifier and its optimized 0.80 operational threshold were compiled into a single production pipeline artifact named <code>lgb_binary_model.pkl</code> and delivered to the backend layer for seamless integration.</li>
 
   <li><b>Dependency Management & Server Deployment:</b> Production dependencies were structured using <code>requirements.txt</code> and <code>Poetry</code> configurations, successfully spinning up the asynchronous <b>FastAPI</b> application layer alongside automated tracking workspace configuration on <b>Trello</b>.</li>
   
@@ -690,11 +690,11 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
   
   <li><b>Optuna Tercih Gerekçesi (Optuna Rationale Implementation):</b> Alternatif optimizasyon yöntemleri değerlendirilmiş; belirlenen kısıtlı parametre uzayında deterministik, tekrarlanabilir ve yüksek kararlılıkta sonuçlar elde etmek amacıyla olasılıksal yaklaşım sunan <b>Optuna</b> yöntemi bu aşamada kasıtlı olarak devre dışı bırakılmıştır.</li>
   
-  <li><b>Dinamik Karar Eşiği Optimizasyonu (Dynamic Decision Threshold Optimization):</b> Sınıf dengesizliğinin getirdiği yanılsamaları aşmak ve arızaları yakalama gücünü (Recall) maksimize etmek amacıyla klasik 0.5 tahmin sınırı yerine, test seti üzerinde F1-Score'u en tepeye çıkaran dinamik bir olasılık eşiği tarama döngüsü kurgulanmış ve en optimum sınır **0.80** olarak sabitlenmiştir.</li>
+  <li><b>Dinamik Karar Eşiği Optimizasyonu (Dynamic Decision Threshold Optimization):</b> Sınıf dengesizliğinin getirdiği yanılsamaları aşmak ve arızaları yakalama gücünü (Recall) maksimize etmek amacıyla klasik 0.5 tahmin sınırı yerine, test seti üzerinde F1-Score'u en tepeye çıkaran dinamik bir olasılık eşiği tarama döngüsü kurgulanmış ve en optimum sınır 0.80 olarak sabitlenmiştir.</li>
   
-  <li><b>Metrik Başarısı ve Yanlış Alarm Azaltımı:</b> Yapılan bu stratejik mühendislik dokunuşları sayesinde arızalı sınıfı yakalama performansı (F1-Score) %68 baseline seviyesinden güçlü bir **%77** seviyesine yükseltilmiş; modelin "arıza var" dediği durumların doğruluğunu gösteren Precision değeri **%89**'a sabitlenerek yanlış bakım alarmı maliyetleri minimuma indirilmiş ve kabul kriterlerindeki %85 barajı aşılarak **%88 Macro F1-Score** başarısına ulaşılmıştır.</li>
+  <li><b>Metrik Başarısı ve Yanlış Alarm Azaltımı:</b> Yapılan bu stratejik mühendislik dokunuşları sayesinde arızalı sınıfı yakalama performansı (F1-Score) %68 baseline seviyesinden güçlü bir %77 seviyesine yükseltilmiş; modelin "arıza var" dediği durumların doğruluğunu gösteren Precision değeri %89'a sabitlenerek yanlış bakım alarmı maliyetleri minimuma indirilmiş ve kabul kriterlerindeki %85 barajı aşılarak %88 Macro F1-Score başarısına ulaşılmıştır.</li>
   
-  <li><b>Model Paketleme ve Varlık Teslimi:</b> Optimize edilen **LightGBM** sınıflandırıcısı ve buna özel belirlenen 0.80 operational eşik değeri tek bir üretim pipeline'ı halinde <code>lgb_binary_model.pkl</code> dosyası olarak derlenmiş; geliştirilen nihai algoritma backend katmanındaki <b>FastAPI</b> entegrasyon süreçleri için Nursenem Zirek'e hazır hale getirilerek teslim edilmiştir.</li>
+  <li><b>Model Paketleme ve Varlık Teslimi:</b> Optimize edilen LightGBM sınıflandırıcısı ve buna özel belirlenen 0.80 operational eşik değeri tek bir üretim pipeline'ı halinde <code>lgb_binary_model.pkl</code> dosyası olarak derlenmiş; geliştirilen nihai algoritma backend katmanındaki <b>FastAPI</b> entegrasyon süreçleri için Nursenem Zirek'e hazır hale getirilerek teslim edilmiştir.</li>
 
   <li><b>Bağımlılık Yönetimi ve Sunucu Yapılandırması:</b> <code>requirements.txt</code> ve <code>Poetry</code> yapılandırmaları ile bağımlılık yönetimi optimize edilmiş; asenkron <b>FastAPI</b> uygulaması başarıyla ayağa kaldırılarak süreç takibi için <b>Trello</b> iş panosu aktif hale getirilmiştir.</li>
   

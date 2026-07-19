@@ -678,7 +678,7 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
 
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
-
+---
  <ul>
   <li><b>Fiziksel Özellik Mühendisliği (Feature Engineering):</b> Proje tasarım dokümanındaki zorunlu isterleri karşılamak adına ham verilere proses-hava sıcaklığı farkı (<code>Temperature_Diff</code>) ve motor mekanik gücü (<code>Power</code>) öznitelikleri entegre edilmiş; bu süreçte proje isterlerine tam uyum sağlamak için standart fiziksel katsayı (0.1047) kullanılmıştır.</li>
   

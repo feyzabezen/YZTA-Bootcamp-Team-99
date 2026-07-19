@@ -667,6 +667,27 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
 
 # Product Status
 
+Projenin bağımlılık yönetimi altyapısı kuruldu; Poetry ve requirements.txt yapılandırmaları tamamlanarak FastAPI projesi ayağa kaldırıldı. Sprint takibi için Trello iş panosu organize edildi.
+
+Veri bilimi ekibinden (Feyza ve Özlem) gelen gerçek .pkl uzantılı makine öğrenmesi model dosyaları joblib.load yöntemiyle FastAPI projesine başarılı bir şekilde entegre edildi.
+
+API katmanında daha önce frontend ekibinin önünü açmak için kullanılan sahte (mock) veriler tamamen kaldırıldı; yüklenen gerçek model dosyaları üzerinden canlı tahmin üreten /api/v1/predict mekanizması aktif hale getirildi.
+
+Projenin akıllı analiz katmanı için CrewAI entegrasyonu tamamlandı. agents.py dosyası içerisinde iki kritik yapay zeka ajanı tanımlandı ve yapılandırıldı:
+
+Veri Analisti Ajanı: Gelen anlık makine sensör değerlerini teknik olarak incelemekle görevlendirildi.
+
+Kök Neden Bakım Uzmanı: SHAP (açıklanabilir yapay zeka) çıktılarını ve tahmin edilen arıza türlerini analiz ederek, teknik ekipler için aksiyon planları ve çözüm reçeteleri hazırlayacak şekilde programlandı.
+
+Frontend ekibiyle entegrasyon testleri yürütülerek tarayıcı tabanlı CORS engelleri ve 422 şema uyuşmazlığı hataları giderildi; sunucunun gerçek verilerle 200 OK durum kodu döndürmesi sağlandı.
+
+Git versiyon kontrol süreçlerinde yaşanan non-fast-forward çakışmaları ve main.py üzerindeki rebase krizleri çözülerek tüm backend kod tabanı GitHub'daki main branch üzerinde stabilize edildi.
+
+Çoklu Arıza Sınıflandırma Modeli: Tahmine dayalı bakım senaryolarında kullanılacak çoklu arıza sınıflandırma modeli optimize edilerek nihai haline getirilmiştir. Model, sistemdeki spesifik arıza türlerini yüksek doğrulukla tespit ve sınıflandırma yetkinliğine ulaştırılmıştır.
+
+SHAP (Explainable AI) Entegrasyonu: SHAP kütüphanesi projenin analitik katmanına entegre edilmiştir. Modelin verdiği kararların arkasındaki kök nedenleri ortaya çıkarmak amacıyla gerekli matematiksel altyapı kurulmuştur.
+
+Kritik Sensör Analiz Fonksiyonu: Model tahmini sonrasında oluşan SHAP değerlerini inceleyerek, o arızaya veya duruma neden olan en kritik 3 sensör değerini dinamik olarak hesaplayan ve belirleyen çekirdek fonksiyon yazılmıştır.
 
 
 

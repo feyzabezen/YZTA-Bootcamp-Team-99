@@ -1,18 +1,23 @@
-from fastapi import FastAPI
+import os
+from dotenv import load_dotenv
 
-from app.api.predict import router as predict_router
+# Importlardan önce çalışmalı
+load_dotenv()
+
+from fastapi import FastAPI
+from app.schemas.predict_schema import PredictionRequest, PredictionResponse
+from app.services.predict_service import predict_machine
 
 app = FastAPI(
     title="Predictive Maintenance API",
     version="1.0.0"
 )
 
-app.include_router(
-    predict_router,
-    prefix="/api/v1",
-    tags=["Prediction"]
-)
-
+# db=None parametresi vererek get_db bağımlılığını kaldırdık
+@app.post("/api/v1/predict", response_model=PredictionResponse, tags=["Prediction"])
+def predict(payload: PredictionRequest):
+    result = predict_machine(payload, db=None)
+    return result
 
 @app.get("/")
 def home():

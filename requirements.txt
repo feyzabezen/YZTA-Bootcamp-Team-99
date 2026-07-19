@@ -5,3 +5,9 @@ numpy
 pandas
 joblib
 python-multipart
+scikit-learn
+lightgbm
+shap
+crewai
+langchain-google-genai
+python-dotenv

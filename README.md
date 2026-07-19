@@ -560,6 +560,11 @@ weighted avg       0.98      0.98      0.98      3000
 <details>
 <summary><b> Sprint Board Updates   </b></summary>
 <br>
+<img width="1592" height="761" alt="image" src="https://github.com/user-attachments/assets/93fa4d9b-7741-422b-aa3c-a627bbdfd8ea" />
+<img width="1592" height="761" alt="image" src="https://github.com/user-attachments/assets/13e5ea2c-32d6-4227-8cd7-de295a3b3485" />
+<img width="1589" height="762" alt="image" src="https://github.com/user-attachments/assets/c2087795-6602-4142-84fb-83cbad0a4006" />
+<img width="1591" height="752" alt="image" src="https://github.com/user-attachments/assets/1587a0f2-d115-4090-b2be-506589e49e40" />
+
 
 # Sprint Board Updates 
 

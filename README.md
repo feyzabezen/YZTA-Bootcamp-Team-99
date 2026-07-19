@@ -597,31 +597,6 @@ weighted avg       0.98      0.98      0.98      3000
 
 ---
 
-### Expected Points
-Target: 
-
-<br>
-<details>
-<summary><b>🇹🇷 Turkish Version </b></summary>
-<br>
-
-Hedef: 
-</details>
-
----
-
----
-
-
-<br>
-<details>
-<summary><b>🇹🇷 Turkish Version </b></summary>
-<br>
-
-<!-- Sprint 2 puan tamamlama mantığı Türkçe açıklaması buraya gelecek -->
-</details>
-
----
 
 # Backlog Distribution Strategy
 Throughout Sprint 2, the product backlog was distributed among team members according to their areas of expertise. The primary objective was to integrate the machine learning models developed during Sprint 1 into the system, replace mock components with real implementations, and establish a fully functional end-to-end AI-powered predictive maintenance system. To achieve this, team members worked in parallel, ensuring a seamless integration process.

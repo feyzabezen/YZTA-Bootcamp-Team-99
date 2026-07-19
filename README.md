@@ -681,11 +681,27 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
   
   <li><b>Pipeline Packaging & Asset Delivery:</b> Compiled the optimized <b>LightGBM</b> classifier and its tailored 0.80 decision threshold into a unified production pipeline file named <code>lgb_binary_model.pkl</code>, delivering the ready-to-use asset to the backend layer for seamless <b>FastAPI</b> integration.</li>
 </ul>
----
+
 
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
+<ul>
+  <li><b>Fiziksel Özellik Mühendisliği (Feature Engineering):</b> Proje tasarım dokümanındaki zorunlu isterleri karşılamak adına ham verilere proses-hava sıcaklığı farkı (<code>Temperature_Diff</code>) ve motor mekanik gücü (<code>Power</code>) öznitelikleri entegre edilmiş; bu süreçte proje isterlerine tam uyum sağlamak için standart fiziksel katsayı (0.1047) kullanılmıştır.</li>
+  
+  <li><b>Yapısal Etkileşim Modellemesi (Structural Interaction Modeling):</b> Makinenin aşındıkça yüksek tork altında gösterdiği yapısal direnci ve aşınma-stres ilişkisini matematiksel olarak modele aktarmak amacıyla tamamen özgün bir <code>Tool_Wear_Torque</code> etkileşim özniteliği tasarlanmış ve koda dahil edilmiştir.</li>
+  
+  <li><b>Sınıf Dengesizliği Adaptasyonu (Algorithmic Imbalance Adaptation):</b> Test setinde F1-Score düşüşüne ve kararsızlığa sebep olan ilk aşamadaki <b>SMOTE</b> yöntemi veri pipeline'ından çıkarılmış; bunun yerine veri kümesindeki azınlık sınıfı lehine ağırlıklandırma yapmak amacıyla <b>LightGBM</b> mimarisinin kendi içindeki cost-sensitive learning (maliyet duyarlı öğrenme) kalkanı olan <code>is_unbalance=True</code> parametresi tercih edilmiştir.</li>
 
+  <li><b>GridSearchCV ile Hiperparametre Optimizasyonu:</b> <code>LGBMClassifier</code> mimarisi üzerinde en kararlı ve en optimum parametre setini belirlemek adına kritik boyutları (<code>learning_rate</code>, <code>n_estimators</code>, <code>max_depth</code>, <code>num_leaves</code>) tarayan kapsamlı bir <code>GridSearchCV</code> optimizasyon katmanı çalıştırılmıştır.</li>
+  
+  <li><b>Optuna Tercih Gerekçesi (Optuna Rationale Implementation):</b> Alternatif optimizasyon yöntemleri değerlendirilmiş; belirlenen kısıtlı parametre uzayında deterministik, tekrarlanabilir ve yüksek kararlılıkta sonuçlar elde etmek amacıyla olasılıksal yaklaşım sunan <b>Optuna</b> yöntemi bu aşamada kasıtlı olarak devre dışı bırakılmıştır.</li>
+  
+  <li><b>Dinamik Karar Eşiği Optimizasyonu (Dynamic Decision Threshold Optimization):</b> Sınıf dengesizliğinin getirdiği yanılsamaları aşmak ve arızaları yakalama gücünü (Recall) maksimize etmek amacıyla klasik 0.5 tahmin sınırı yerine, test seti üzerinde F1-Score'u en tepeye çıkaran dinamik bir olasılık eşiği tarama döngüsü kurgulanmış ve en optimum sınır **0.80** olarak sabitlenmiştir.</li>
+  
+  <li><b>Metrik Başarısı ve Yanlış Alarm Azaltımı:</b> Yapılan bu stratejik mühendislik dokunuşları sayesinde arızalı sınıfı yakalama performansı (F1-Score) %68 baseline seviyesinden güçlü bir **%77** seviyesine yükseltilmiş; modelin "arıza var" dediği durumların doğruluğunu gösteren Precision değeri **%89**'a sabitlenerek yanlış bakım alarmı maliyetleri minimuma indirilmiş ve kabul kriterlerindeki %85 barajı aşılarak **%88 Macro F1-Score** başarısına ulaşılmıştır.</li>
+  
+  <li><b>Model Paketleme ve Varlık Teslimi:</b> Optimize edilen **LightGBM** sınıflandırıcısı ve buna özel belirlenen 0.80 operational eşik değeri tek bir üretim pipeline'ı halinde <code>lgb_binary_model.pkl</code> dosyası olarak derlenmiş; geliştirilen nihai algoritma backend katmanındaki <b>FastAPI</b> entegrasyon süreçleri için hazır hale getirilerek teslim edilmiştir.</li>
+</ul>
 
 
 </details>

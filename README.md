@@ -612,9 +612,6 @@ Hedef:
 
 ---
 
-### Point Completion Logic
-<!-- Sprint 2 puan tamamlama mantığı açıklaması buraya gelecek -->
-
 
 <br>
 <details>
@@ -667,30 +664,23 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
 
 # Product Status
 
-Projenin bağımlılık yönetimi altyapısı kuruldu; Poetry ve requirements.txt yapılandırmaları tamamlanarak FastAPI projesi ayağa kaldırıldı. Sprint takibi için Trello iş panosu organize edildi.
+<ul>
+  <li><b>Domain-Driven Feature Engineering:</b> Enhanced the industrial dataset by engineer-driven physical features, successfully deriving the process-to-air temperature gradient (<code>Temperature_Diff</code>) and the structural mechanical efficiency indicator (<code>Power</code>) utilizing the standard physical multiplier (0.1047) to comply with project design requirements.</li>
+  
+  <li><b>Structural Interaction Modeling:</b> Conceived and implemented a custom <code>Tool_Wear_Torque</code> interaction feature to mathematically capture non-linear degradation patterns emerging under high mechanical stress conditions.</li>
+  
+  <li><b>Algorithmic Imbalance Adaptation:</b> Deprecated the initial <b>SMOTE</b> data augmentation strategy due to test-set F1-score destabilization and degradation, replacing it with <b>LightGBM</b>'s cost-sensitive learning framework by integrating the <code>is_unbalance=True</code> parameter inside the core estimator.</li>
 
-Veri bilimi ekibinden (Feyza ve Özlem) gelen gerçek .pkl uzantılı makine öğrenmesi model dosyaları joblib.load yöntemiyle FastAPI projesine başarılı bir şekilde entegre edildi.
-
-API katmanında daha önce frontend ekibinin önünü açmak için kullanılan sahte (mock) veriler tamamen kaldırıldı; yüklenen gerçek model dosyaları üzerinden canlı tahmin üreten /api/v1/predict mekanizması aktif hale getirildi.
-
-Projenin akıllı analiz katmanı için CrewAI entegrasyonu tamamlandı. agents.py dosyası içerisinde iki kritik yapay zeka ajanı tanımlandı ve yapılandırıldı:
-
-Veri Analisti Ajanı: Gelen anlık makine sensör değerlerini teknik olarak incelemekle görevlendirildi.
-
-Kök Neden Bakım Uzmanı: SHAP (açıklanabilir yapay zeka) çıktılarını ve tahmin edilen arıza türlerini analiz ederek, teknik ekipler için aksiyon planları ve çözüm reçeteleri hazırlayacak şekilde programlandı.
-
-Frontend ekibiyle entegrasyon testleri yürütülerek tarayıcı tabanlı CORS engelleri ve 422 şema uyuşmazlığı hataları giderildi; sunucunun gerçek verilerle 200 OK durum kodu döndürmesi sağlandı.
-
-Git versiyon kontrol süreçlerinde yaşanan non-fast-forward çakışmaları ve main.py üzerindeki rebase krizleri çözülerek tüm backend kod tabanı GitHub'daki main branch üzerinde stabilize edildi.
-
-Çoklu Arıza Sınıflandırma Modeli: Tahmine dayalı bakım senaryolarında kullanılacak çoklu arıza sınıflandırma modeli optimize edilerek nihai haline getirilmiştir. Model, sistemdeki spesifik arıza türlerini yüksek doğrulukla tespit ve sınıflandırma yetkinliğine ulaştırılmıştır.
-
-SHAP (Explainable AI) Entegrasyonu: SHAP kütüphanesi projenin analitik katmanına entegre edilmiştir. Modelin verdiği kararların arkasındaki kök nedenleri ortaya çıkarmak amacıyla gerekli matematiksel altyapı kurulmuştur.
-
-Kritik Sensör Analiz Fonksiyonu: Model tahmini sonrasında oluşan SHAP değerlerini inceleyerek, o arızaya veya duruma neden olan en kritik 3 sensör değerini dinamik olarak hesaplayan ve belirleyen çekirdek fonksiyon yazılmıştır.
-
-
-
+  <li><b>GridSearchCV Hyperparameter Optimization:</b> Executed an extensive hyperparameter tuning pipeline using <code>GridSearchCV</code> on the <code>LGBMClassifier</code> architecture, searching across key dimensions (<code>learning_rate</code>, <code>n_estimators</code>, <code>max_depth</code>, <code>num_leaves</code>) to determine the most stable and optimal parameter configuration.</li>
+  
+  <li><b>Optuna Rationale Implementation:</b> Evaluated alternative optimization methods and deliberately excluded the probabilistic <b>Optuna</b> approach to enforce a deterministic, reproducible, and highly stable grid-search environment within the restricted parameter space.</li>
+  
+  <li><b>Dynamic Decision Threshold Optimization:</b> Overrode the standard 0.5 classification boundary by deploying an automated probability threshold scanning loop, mathematically establishing <b>0.80</b> as the optimal cutoff to maximize minority class F1-Score metrics.</li>
+  
+  <li><b>Metric Achievement & False Alarm Reduction:</b> Boosted the failure detection performance (F1-Score) from a 68% baseline to a robust <b>77%</b>, while locking the operational Precision rate at <b>89%</b> to minimize costly false maintenance alarms, subsequently exceeding the strict 85% Macro F1-Score corporate acceptance threshold by reaching <b>88%</b>.</li>
+  
+  <li><b>Pipeline Packaging & Asset Delivery:</b> Compiled the optimized <b>LightGBM</b> classifier and its tailored 0.80 decision threshold into a unified production pipeline file named <code>lgb_binary_model.pkl</code>, delivering the ready-to-use asset to the backend layer for seamless <b>FastAPI</b> integration.</li>
+</ul>
 ---
 
 <details>

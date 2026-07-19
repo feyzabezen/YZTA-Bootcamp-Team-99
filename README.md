@@ -665,21 +665,39 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
 # Product Status
 
 <ul>
-  <li><b>Domain-Driven Feature Engineering:</b> Enhanced the industrial dataset by engineer-driven physical features, successfully deriving the process-to-air temperature gradient (<code>Temperature_Diff</code>) and the structural mechanical efficiency indicator (<code>Power</code>) utilizing the standard physical multiplier (0.1047) to comply with project design requirements.</li>
+  <li><b>Physical Feature Engineering:</b> Process and ambient temperature data were transformed to construct the temperature differential feature (<code>Temperature_Diff</code>), and motor power (<code>Power</code>) was derived using the standard physical multiplier (0.1047) to enforce alignment with core engineering constraints.</li>
   
-  <li><b>Structural Interaction Modeling:</b> Conceived and implemented a custom <code>Tool_Wear_Torque</code> interaction feature to mathematically capture non-linear degradation patterns emerging under high mechanical stress conditions.</li>
+  <li><b>Structural Interaction Modeling:</b> A specialized <code>Tool_Wear_Torque</code> interaction feature was designed and embedded into the dataset to mathematically isolate non-linear degradation dynamics emerging under compounding mechanical stress states.</li>
   
-  <li><b>Algorithmic Imbalance Adaptation:</b> Deprecated the initial <b>SMOTE</b> data augmentation strategy due to test-set F1-score destabilization and degradation, replacing it with <b>LightGBM</b>'s cost-sensitive learning framework by integrating the <code>is_unbalance=True</code> parameter inside the core estimator.</li>
+  <li><b>Algorithmic Imbalance Adaptation:</b> The initial <b>SMOTE</b> data augmentation framework was deprecated due to validation-stage F1-score degradation and operational instability; the pipeline shifted to internal cost-sensitive learning metrics by leveraging the native <code>is_unbalance=True</code> parameter inside the <b>LightGBM</b> architecture.</li>
 
-  <li><b>GridSearchCV Hyperparameter Optimization:</b> Executed an extensive hyperparameter tuning pipeline using <code>GridSearchCV</code> on the <code>LGBMClassifier</code> architecture, searching across key dimensions (<code>learning_rate</code>, <code>n_estimators</code>, <code>max_depth</code>, <code>num_leaves</code>) to determine the most stable and optimal parameter configuration.</li>
+  <li><b>GridSearchCV Hyperparameter Optimization:</b> An exhaustive hyperparameter tuning pipeline was executed using <code>GridSearchCV</code> over the <code>LGBMClassifier</code> architecture, systematically scanning structural parameters (<code>learning_rate</code>, <code>n_estimators</code>, <code>max_depth</code>, <code>num_leaves</code>) to secure a repeatable model setup.</li>
   
-  <li><b>Optuna Rationale Implementation:</b> Evaluated alternative optimization methods and deliberately excluded the probabilistic <b>Optuna</b> approach to enforce a deterministic, reproducible, and highly stable grid-search environment within the restricted parameter space.</li>
+  <li><b>Optuna Rationale Implementation:</b> Alternative optimization paradigms were scrutinized, resulting in the explicit exclusion of the probabilistic <b>Optuna</b> framework to enforce a deterministic, reproducible, and highly stable grid-search strategy within the bounded parameter space.</li>
   
-  <li><b>Dynamic Decision Threshold Optimization:</b> Overrode the standard 0.5 classification boundary by deploying an automated probability threshold scanning loop, mathematically establishing <b>0.80</b> as the optimal cutoff to maximize minority class F1-Score metrics.</li>
+  <li><b>Dynamic Decision Threshold Optimization:</b> The default 0.5 classification boundary was bypassed by deploying an automated probability threshold scanning loop, mathematically establishing **0.80** as the optimal operational cut-off to maximize minority class F1-Score metrics.</li>
   
-  <li><b>Metric Achievement & False Alarm Reduction:</b> Boosted the failure detection performance (F1-Score) from a 68% baseline to a robust <b>77%</b>, while locking the operational Precision rate at <b>89%</b> to minimize costly false maintenance alarms, subsequently exceeding the strict 85% Macro F1-Score corporate acceptance threshold by reaching <b>88%</b>.</li>
+  <li><b>Metric Achievement & False Alarm Reduction:</b> Focused optimization loops elevated the baseline failure detection capacity (F1-Score) from 68% to a robust **77%**, while locking the operational Precision rate at **89%** to minimize costly false maintenance alarms and driving the overall Macro F1-Score to **88%** to successfully clear the 85% corporate acceptance threshold.</li>
   
-  <li><b>Pipeline Packaging & Asset Delivery:</b> Compiled the optimized <b>LightGBM</b> classifier and its tailored 0.80 decision threshold into a unified production pipeline file named <code>lgb_binary_model.pkl</code>, delivering the ready-to-use asset to the backend layer for seamless <b>FastAPI</b> integration.</li>
+  <li><b>Pipeline Packaging & Asset Delivery:</b> The tuned **LightGBM** classifier and its optimized 0.80 operational threshold were compiled into a single production pipeline artifact named <code>lgb_binary_model.pkl</code> and delivered to the backend layer for seamless integration.</li>
+
+  <li><b>Dependency Management & Server Deployment:</b> Production dependencies were structured using <code>requirements.txt</code> and <code>Poetry</code> configurations, successfully spinning up the asynchronous <b>FastAPI</b> application layer alongside automated tracking workspace configuration on <b>Trello</b>.</li>
+  
+  <li><b>Production Model Deserialization:</b> Implemented production-ready model deserialization utilizing the <code>joblib.load</code> method to dynamically inject the trained <code>.pkl</code> machine learning pipeline artifacts into the active <b>FastAPI</b> application framework.</li>
+  
+  <li><b>Live Prediction Deployment:</b> The temporary mock data layer was completely dismantled, transitioning the active backend infrastructure to a live inference engine driven by the fully operational <code>/api/v1/predict</code> endpoint.</li>
+
+  <li><b>Predictive Model Finalization:</b> Designed and finalized the core Multi-Class Failure Classification Model to precisely identify, separate, and predict distinct industrial machine failure categories with high accuracy rather than relying on basic binary alerts.</li>
+
+  <li><b>Explainable AI (XAI) Entegrasyonu:</b> The <b>SHAP</b> (Shapley Additive exPlanations) library was integrated into the core analytical layers to compute feature importance metrics, ensuring full black-box transparency and model explainability.</li>
+
+  <li><b>Root Cause Analytical Function:</b> A dedicated internal algorithm was engineered to evaluate post-prediction <b>SHAP</b> matrices, dynamically calculating and returning the top 3 most critical sensor value anomalies that triggered the specific machine failure event.</li>
+
+  <li><b>Dual-Agent CrewAI Architecture:</b> An intelligent multi-agent framework was constructed inside <code>agents.py</code> utilizing <b>CrewAI</b>, successfully establishing two specialized artificial intelligence agents: the <i>Data Analyst Agent</i>, tasked with auditing incoming telemetric sensor logs for structural fluctuations, and the <i>Root Cause Maintenance Expert</i>, engineered to process <b>SHAP</b> diagnostic values and failure classes to output actionable mitigation blueprints for engineering teams.</li>
+  
+  <li><b>E2E Integration & CORS Protocols:</b> Comprehensive full-stack connection tests were executed with the frontend client layer, eliminating browser-level <b>CORS</b> restrictions and resolving <code>422 Unprocessable Entity</code> payload validation schema mismatches to deliver stable <code>200 OK</code> API responses.</li>
+  
+  <li><b>Version Control & Codebase Stabilization:</b> Upstream Git merge anomalies and non-fast-forward/rebase crises across <code>main.py</code> and <code>README.md</code> were completely untangled, securing a clean and unified codebase on the remote GitHub <code>main</code> branch.</li>
 </ul>
 
 

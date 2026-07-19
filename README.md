@@ -705,6 +705,24 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
   <li><b>Model Paketleme ve Varlık Teslimi:</b> Optimize edilen **LightGBM** sınıflandırıcısı ve buna özel belirlenen 0.80 operational eşik değeri tek bir üretim pipeline'ı halinde <code>lgb_binary_model.pkl</code> dosyası olarak derlenmiş; geliştirilen nihai algoritma backend katmanındaki <b>FastAPI</b> entegrasyon süreçleri için hazır hale getirilerek teslim edilmiştir.</li>
 </ul>
 
+  <li><b>Bağımlılık Yönetimi ve Sunucu Yapılandırması:</b> <code>requirements.txt</code> ve <code>Poetry</code> yapılandırmaları ile bağımlılık yönetimi optimize edilmiş; asenkron <b>FastAPI</b> uygulaması başarıyla ayağa kaldırılarak süreç takibi için <b>Trello</b> iş panosu aktif hale getirilmiştir.</li>
+  
+  <li><b>Dinamik Model Entegrasyonu:</b> Veri bilimi ekibinden gelen eğitilmiş <code>.pkl</code> uzantılı makine öğrenmesi model dosyaları, <code>joblib.load</code> yöntemiyle <b>FastAPI</b> backend mimarisine dinamik ve gerçek zamanlı çalışacak şekilde entegre edilmiştir.</li>
+  
+  <li><b>Canlı Tahmin Endpoint Aktivasyonu:</b> API katmanındaki geçici mock (sahte) veri motoru tamamen kaldırılmış; gerçek model ve canlı tahmin mekanizmasından beslenen dinamik <code>/api/v1/predict</code> endpoint'i devreye alınmıştır.</li>
+
+  <li><b>Çoklu Arıza Sınıflandırma Optimizasyonu:</b> Tahmine dayalı bakım senaryolarında spesifik arıza türlerini yüksek doğrulukla tespit etmek amacıyla Çoklu Arıza Sınıflandırma Modeli optimize edilerek nihai üretim seviyesine getirilmiştir.</li>
+
+  <li><b>Açıklanabilir Yapay Zeka (XAI) Entegrasyonu:</b> Model kararlarının arkasındaki kök nedenleri ortaya koymak ve model şeffaflığını sağlamak amacıyla <b>SHAP</b> (Shapley Additive exPlanations) kütüphanesi projenin analitik katmanına başarıyla entegre edilmiştir.</li>
+
+  <li><b>Kritik Sensör Analiz Fonksiyonu:</b> Model tahmini sonrasında oluşan <b>SHAP</b> değerlerini anlık inceleyerek, ilgili arızaya veya makine durumuna neden olan en kritik 3 sensör değerini dinamik olarak hesaplayan ve belirleyen çekirdek algoritmik fonksiyon yazılmıştır.</li>
+
+  <li><b>Multi-Agent (Çoklu Ajan) Mimarisi Kurulumu:</b> Projenin akıllı analiz ve reçete üretim süreçleri için <code>agents.py</code> içerisinde <b>CrewAI</b> altyapısı kurulmuş ve iki kritik yapay zeka ajanı yapılandırılmıştır: Gelen anlık makine sensör değerlerini teknik incelemeye tabi tutan <i>Veri Analisti Ajanı</i> ve <b>SHAP</b> çıktıları ile arıza sınıfını analiz ederek teknik ekipler için somut aksiyon planları ve çözüm reçeteleri hazırlayan <i>Kök Neden Bakım Uzmanı Ajanı</i>.</li>
+  
+  <li><b>Entegrasyon ve CORS Protokolü Çözümleri:</b> Frontend ekibiyle yapılan entegrasyon testlerinde karşılaşılan tarayıcı tabanlı <b>CORS</b> engelleri ve <code>422 Unprocessable Entity</code> veri şeması uyuşmazlığı hataları tamamen çözülerek <code>200 OK</code> durum koduyla kararlı veri akışı güvenceye alınmıştır.</li>
+  
+  <li><b>Git Çakışma Yönetimi ve Kod Stabilizasyonu:</b> <code>main.py</code> ve <code>README.md</code> üzerinde yaşanan Git çakışmaları (non-fast-forward/rebase krizleri) temizlenerek, tüm backend kod tabanı GitHub <code>main</code> branch'i üzerinde stabilize edilmiştir.</li>
+
 
 </details>
 

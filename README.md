@@ -686,8 +686,7 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
 
- 
-<ul>
+ <ul>
   <li><b>Fiziksel Özellik Mühendisliği (Feature Engineering):</b> Proje tasarım dokümanındaki zorunlu isterleri karşılamak adına ham verilere proses-hava sıcaklığı farkı (<code>Temperature_Diff</code>) ve motor mekanik gücü (<code>Power</code>) öznitelikleri entegre edilmiş; bu süreçte proje isterlerine tam uyum sağlamak için standart fiziksel katsayı (0.1047) kullanılmıştır.</li>
   
   <li><b>Yapısal Etkileşim Modellemesi (Structural Interaction Modeling):</b> Makinenin aşındıkça yüksek tork altında gösterdiği yapısal direnci ve aşınma-stres ilişkisini matematiksel olarak modele aktarmak amacıyla tamamen özgün bir <code>Tool_Wear_Torque</code> etkileşim özniteliği tasarlanmış ve koda dahil edilmiştir.</li>
@@ -702,8 +701,7 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
   
   <li><b>Metrik Başarısı ve Yanlış Alarm Azaltımı:</b> Yapılan bu stratejik mühendislik dokunuşları sayesinde arızalı sınıfı yakalama performansı (F1-Score) %68 baseline seviyesinden güçlü bir **%77** seviyesine yükseltilmiş; modelin "arıza var" dediği durumların doğruluğunu gösteren Precision değeri **%89**'a sabitlenerek yanlış bakım alarmı maliyetleri minimuma indirilmiş ve kabul kriterlerindeki %85 barajı aşılarak **%88 Macro F1-Score** başarısına ulaşılmıştır.</li>
   
-  <li><b>Model Paketleme ve Varlık Teslimi:</b> Optimize edilen **LightGBM** sınıflandırıcısı ve buna özel belirlenen 0.80 operational eşik değeri tek bir üretim pipeline'ı halinde <code>lgb_binary_model.pkl</code> dosyası olarak derlenmiş; geliştirilen nihai algoritma backend katmanındaki <b>FastAPI</b> entegrasyon süreçleri için hazır hale getirilerek teslim edilmiştir.</li>
-</ul>
+  <li><b>Model Paketleme ve Varlık Teslimi:</b> Optimize edilen **LightGBM** sınıflandırıcısı ve buna özel belirlenen 0.80 operational eşik değeri tek bir üretim pipeline'ı halinde <code>lgb_binary_model.pkl</code> dosyası olarak derlenmiş; geliştirilen nihai algoritma backend katmanındaki <b>FastAPI</b> entegrasyon süreçleri için Nursenem Zirek'e hazır hale getirilerek teslim edilmiştir.</li>
 
   <li><b>Bağımlılık Yönetimi ve Sunucu Yapılandırması:</b> <code>requirements.txt</code> ve <code>Poetry</code> yapılandırmaları ile bağımlılık yönetimi optimize edilmiş; asenkron <b>FastAPI</b> uygulaması başarıyla ayağa kaldırılarak süreç takibi için <b>Trello</b> iş panosu aktif hale getirilmiştir.</li>
   
@@ -722,6 +720,8 @@ Sprint 2, entegrasyon odaklı paralel geliştirme yaklaşımıyla yürütülmü�
   <li><b>Entegrasyon ve CORS Protokolü Çözümleri:</b> Frontend ekibiyle yapılan entegrasyon testlerinde karşılaşılan tarayıcı tabanlı <b>CORS</b> engelleri ve <code>422 Unprocessable Entity</code> veri şeması uyuşmazlığı hataları tamamen çözülerek <code>200 OK</code> durum koduyla kararlı veri akışı güvenceye alınmıştır.</li>
   
   <li><b>Git Çakışma Yönetimi ve Kod Stabilizasyonu:</b> <code>main.py</code> ve <code>README.md</code> üzerinde yaşanan Git çakışmaları (non-fast-forward/rebase krizleri) temizlenerek, tüm backend kod tabanı GitHub <code>main</code> branch'i üzerinde stabilize edilmiştir.</li>
+</ul>
+
 
 
 </details>

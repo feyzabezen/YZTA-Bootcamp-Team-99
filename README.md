@@ -578,8 +578,7 @@ weighted avg       0.98      0.98      0.98      3000
 
 # Project Screenshots
 
-<!-- Sprint 2 Arayüz / Kod Ekran Görüntülerini Aşağıya Ekleyebilirsiniz -->
-
+<img width="1067" height="876" alt="Ekran görüntüsü 2026-07-19 194242" src="https://github.com/user-attachments/assets/49f90aa9-29c4-430e-9c0c-e5341a309a2a" />
 
 </details>
 

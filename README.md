@@ -687,16 +687,22 @@ By the end of Sprint 2, the real machine learning models were successfully integ
 Sprint 2 sonunda Sprint 1'de hazırlanan altyapı üzerine gerçek makine öğrenmesi modelleri başarıyla entegre edilmiş ve mock tahmin mekanizması tamamen kaldırılmıştır. Veri bilimi, backend ve frontend ekipleri paralel geliştirme yaklaşımıyla çalışarak sistemi uçtan uca çalışır hale getirmiştir. Model performansı öznitelik mühendisliği, hiperparametre optimizasyonu ve karar eşiği optimizasyonu ile iyileştirilmiş; F1-Score %68'den %77'ye yükseltilirken Precision değeri %89 seviyesinde korunmuştur. Açıklanabilir Yapay Zekâ (XAI) desteği kapsamında SHAP entegrasyonu tamamlanmış ve her tahmin için arızaya en fazla etki eden üç kritik sensör değerinin kullanıcıya sunulması sağlanmıştır. Gerçek zamanlı API, SQLite veri yönetimi, yapay zekâ ajanları ve dinamik veri görselleştirme bileşenleri başarıyla entegre edilerek kestirimci bakım sistemi fonksiyonel bir ürün seviyesine ulaştırılmıştır. Sprint sonunda ürünün temel işlevleri doğrulanmış olup, Sprint 3 için performans testleri, son optimizasyonlar ve canlı ortama geçiş hazırlıkları planlanmıştır.</details>
 
 # Sprint Retrospective
-<!-- Sprint 2 Retrospective metni buraya gelecek -->
+Sprint 2 was a productive sprint focused on system integration. Team members worked in parallel, successfully integrating the real machine learning models, backend API, frontend interface, and AI agents, resulting in a fully functional end-to-end predictive maintenance system.
 
+Regular team meetings enabled quick resolution of integration issues and strengthened coordination among team members. For the next sprint, the team agreed to start performance testing earlier, expand end-to-end test scenarios, and complete the final optimizations before production deployment.
+
+Overall, Sprint 2 significantly improved the technical maturity of the product and established a solid foundation for the final testing, optimization, and production release planned for Sprint 3.
 
 <br>
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
 <br>
 
-<!-- Sprint 2 Retrospective Türkçe metni buraya gelecek -->
-</details>
+Sprint 2, entegrasyon odaklı çalışmaların başarıyla tamamlandığı verimli bir sprint olmuştur. Ekip üyeleri görevlerini paralel olarak yürütmüş, gerçek makine öğrenmesi modelleri, backend API, frontend arayüzü ve AI ajanları başarıyla entegre edilerek sistem uçtan uca çalışır hale getirilmiştir.
+
+Sprint sürecinde düzenli ekip toplantıları sayesinde entegrasyon sırasında karşılaşılan sorunlar hızlıca çözülmüş ve ekipler arasındaki koordinasyon güçlenmiştir. Bir sonraki sprint için performans testlerinin daha erken başlatılması, uçtan uca test senaryolarının artırılması ve canlı ortama geçiş öncesinde son optimizasyonların tamamlanması kararlaştırılmıştır.
+
+Genel olarak Sprint 2, ürünün teknik olgunluğunu önemli ölçüde artırmış ve projenin Sprint 3'te gerçekleştirilecek son testler ile production ortamına hazır hale gelmesi için güçlü bir temel oluşturmuştur.</details>
 
 ## Product Increment / Technical Performance:
 

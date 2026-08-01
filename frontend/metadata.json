@@ -1,0 +1,6 @@
+{
+  "name": "Kestirimci Bakım Platformu",
+  "description": "Endüstriyel sensör verileriyle makine arızalarını önceden tahmin eden ve yapay zeka ajanlarıyla kök neden analizi yapan platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

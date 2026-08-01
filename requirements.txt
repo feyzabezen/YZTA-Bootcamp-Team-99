@@ -10,10 +10,6 @@ lightgbm
 shap
 crewai
 langchain-google-genai
-<<<<<<< Updated upstream
-python-dotenv
-=======
 python-dotenv
 sqlalchemy
 litellm
->>>>>>> Stashed changes

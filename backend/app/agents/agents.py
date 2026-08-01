@@ -1,16 +1,15 @@
 import os
-from crewai import Agent
-from langchain_google_genai import ChatGoogleGenerativeAI
+from crewai import Agent, LLM
 
 class MaintenanceAgents:
     def __init__(self):
-        # Gemini modelini tanımlıyoruz (Tercihe göre gemini-2.5-flash veya gemini-2.5-pro)
-        # os.environ["GEMINI_API_KEY"] sistemde yüklü olmalıdır.
-        api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
-        self.gemini_llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
-            temperature=0.2,
-            google_api_key=os.environ.get("GEMINI_API_KEY")
+        # Ollama modelini tanımlıyoruz (yerelde çalıştığını varsayıyoruz)
+        self.llm_instance = LLM(
+            model="ollama_chat/llama3.1",
+            base_url=os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434"),
+            temperature=0.7,
+            max_retries=5,
+            timeout=60.0
         )
 
     def data_analyst_agent(self) -> Agent:
@@ -24,7 +23,7 @@ class MaintenanceAgents:
             ),
             verbose=True,
             allow_delegation=False,
-            llm=self.gemini_llm  # Gemini modeli enjekte edildi
+            llm=self.llm_instance
         )
 
     def root_cause_expert_agent(self) -> Agent:
@@ -40,5 +39,5 @@ class MaintenanceAgents:
             ),
             verbose=True,
             allow_delegation=True,
-            llm=self.gemini_llm  # Gemini modeli enjekte edildi
+            llm=self.llm_instance
         )

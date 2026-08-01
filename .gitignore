@@ -62,6 +62,7 @@ venv.bak/
 # OS / misc
 .DS_Store
 *.log
+<<<<<<< Updated upstream
 
 # Jupyter
 .ipynb_checkpoints/
@@ -71,3 +72,12 @@ venv.bak/
 .pyre/
 .pytype/
 .ruff_cache/
+=======
+.env*
+!.env.example
+venv/ 
+__pycache__/ 
+*.pyc 
+>>>>>>> Stashed changes
+frontend/node_modules/ 
+frontend/.vite/ 

@@ -2,7 +2,6 @@ from sqlalchemy import Column, Integer, String, Float, Boolean, Text, DateTime
 from sqlalchemy.sql import func
 from sqlalchemy.orm import declarative_base
 
-# Hatalı olan 'from app.database.base_class import Base' satırı yerine bunu yaz:
 Base = declarative_base()
 
 class PredictionModel(Base):

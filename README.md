@@ -815,7 +815,8 @@ https://trello.com/b/01mPbDud/team99
 
 # Project Screenshots
 
-<!-- Sprint 3 Arayüz / Kod Ekran Görüntülerini Aşağıya Ekleyebilirsiniz -->
+<img width="1600" height="759" alt="WhatsApp Image 2026-08-02 at 15 55 24" src="https://github.com/user-attachments/assets/08a1803b-6f2d-4ba3-a47b-bdd1b986fbeb" />
+<img width="1063" height="812" alt="WhatsApp Image 2026-08-02 at 15 55 24 (1)" src="https://github.com/user-attachments/assets/56f11b11-ddb4-4553-a0d1-bd48360177ca" />
 
 
 </details>
@@ -859,7 +860,7 @@ Feyza (Product Owner & Data Scientist 1) focused on project alignment and manage
 
 Özlem (Data Scientist 2) took full ownership of codebase quality and refactoring. She thoroughly audited all Python modules, applying PEP8 formatting standards and adding detailed docstrings across all data science, model loading, and feature engineering scripts to secure clean-code bonus evaluation points.
 
-Nursenem (Scrum Master & AI Engineer 1) managed the deployment and DevOps pipeline. She containerized and deployed the FastAPI backend and SQLite database layer onto cloud hosting services (Render / Hugging Face Spaces), verifying public URL accessibility and running end-to-end integration test suites across live endpoints.
+Nursenem (Scrum Master & AI Engineer 1) managed the deployment and DevOps processes, making the FastAPI backend and SQLite database ready for deployment to cloud platforms (Render / Hugging Face Spaces)
 
 Emre (AI Engineer 2 & Frontend) led the user interface polish and final media delivery. He resolved frontend display edge cases, connected Streamlit directly to the production API, and produced the mandatory 3-minute YouTube walkthrough video detailing system architecture, live sensor inputs, and AI agent output cards.
 
@@ -874,7 +875,7 @@ Feyza (Product Owner & Data Scientist 1) proje uyumu ve yönetimsel dökümantas
 
 Özlem (Data Scientist 2) kod kalitesi ve refactoring sorumluluğunu üstlenmiştir. Tüm Python modüllerini tarayarak PEP8 standartlarını uygulamış; veri bilimi, model yükleme ve öznitelik mühendisliği betiklerine detaylı docstring'ler ekleyerek ekstra temiz kod puanlarını güvenceye almıştır.
 
-Nursenem (Scrum Master & AI Engineer 1) canlıya alma ve DevOps süreçlerini yönetmiştir. FastAPI backend ve SQLite veri tabanını bulut platformlarına (Render / Hugging Face Spaces) deploy etmiş, canlı URL erişilebilirliğini doğrulamış ve uçtan uca entegrasyon testlerini koşturmuştur.
+Nursenem (Scrum Master & AI Engineer 1) canlıya alma ve DevOps süreçlerini yönetmiştir. FastAPI backend ve SQLite veri tabanını bulut platformlarına (Render / Hugging Face Spaces) deploy etmeye hazır hale getirmiştir.
 
 Emre (AI Engineer 2 & Frontend) kullanıcı arayüzü cilalaması ve medya teslimatına liderlik etmiştir. Arayüzdeki kenar durum hatalarını gidermiş, Streamlit'i canlı API'ye bağlamış ve sistem mimarisi ile yapay zeka ajanlarını gösteren 3 dakikalık YouTube videosunu hazırlamıştır.
 </details>

@@ -832,31 +832,20 @@ https://trello.com/b/01mPbDud/team99
 ---
 
 ### Expected Points
-Target: 
+Target: 90
 
 <br>
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
 <br>
 
-Hedef: 
+Hedef: 90
 </details>
 
 ---
 
 ---
 
-### Point Completion Logic
-<!-- Sprint 3 puan tamamlama mantığı açıklaması buraya gelecek -->
-
-
-<br>
-<details>
-<summary><b>🇹🇷 Turkish Version </b></summary>
-<br>
-
-<!-- Sprint 3 puan tamamlama mantığı Türkçe açıklaması buraya gelecek -->
-</details>
 
 ---
 

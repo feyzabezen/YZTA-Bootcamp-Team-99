@@ -800,7 +800,9 @@ weighted avg       0.99      0.99      0.99      3000
 
 # Sprint Board Updates 
 
-<!-- Sprint 3 Trello Ekran Görüntülerini Aşağıya Ekleyebilirsiniz -->
+<img width="1594" height="706" alt="image" src="https://github.com/user-attachments/assets/d766f2c7-6d95-4575-9a40-580ad3de3a5f" />
+<img width="1593" height="709" alt="image" src="https://github.com/user-attachments/assets/57022bab-5d86-40a0-a9c4-9105b5400411" />
+
 
 
 https://trello.com/b/01mPbDud/team99
@@ -824,7 +826,8 @@ https://trello.com/b/01mPbDud/team99
 
 # Burndown Chart
 
-<!-- Sprint 3 Burndown Grafiğini Aşağıya Ekleyebilirsiniz -->
+<img width="701" height="574" alt="WhatsApp Image 2026-08-02 at 13 41 17" src="https://github.com/user-attachments/assets/bb45bb0b-dd37-41bb-94ee-2c4e36c629f3" />
+
 
 
 </details>

@@ -21,6 +21,7 @@ export default function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [currentView, setCurrentView] = useState<string>('landing');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     setMousePos({ x: e.clientX, y: e.clientY });
@@ -32,6 +33,7 @@ export default function App() {
 
   const handlePredict = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
   
     const requestPayload = {
       type: "M", 
@@ -56,17 +58,26 @@ export default function App() {
       }
 
       const data = await response.json();
+
+      const reportText = data.agent_analysis_report || "Sistem analizi tamamlandı. Ajan raporu oluşturulamadı.";
     
+      const steps = data.recommendation 
+        ? [
+            data.recommendation,
+            "Sensör hatları üzerindeki yükü kontrol edin.",
+            "Kestirimci bakım günlüğüne bu olayı kaydedin."
+          ]
+        : [
+            "Sensör loglarının kararlılığını telemetri hattından izlemeye devam edin.",
+            "Veri tutarlılığı adına cihaz tork limitlerini gözden geçirin."
+          ];
+
       setMockResult({
         failureRisk: `${Math.round(data.failure_probability * 100)}%`,
         rootCause: data.failure_type,
         status: data.machine_failure ? "Tehlike" : "Stabil",
         analystReport: data.agent_analysis_report || `Sistem analizi tamamlandı.`,
-        actionPlan: [
-          data.recommendation,
-          "Sensör loglarının kararlılığını telemetri hattından izlemeye devam edin.",
-          "Veri tutarlılığı adına cihaz tork limitlerini gözden geçirin."
-        ]
+        actionPlan: steps
       });
 
     } catch (error) {
@@ -81,8 +92,11 @@ export default function App() {
           "Aşırı zorlanmayı önlemek adına tork sınırlandırma valflerini aktif hale getirin."
         ]
       });
+    } finally {
+      setLoading(false);
     }
   };
+  
 
   return (
     <div onMouseMove={handleMouseMove} className={`min-h-screen font-sans p-6 relative overflow-hidden transition-colors duration-300 ${darkMode ? 'bg-[#1c1d21] text-slate-100' : 'bg-slate-50 text-slate-800'}`}>
@@ -98,16 +112,23 @@ export default function App() {
       {/* üst bar */}
       <header className={`relative p-5 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 shadow-md backdrop-blur-md border z-50 ${darkMode ? 'bg-[#28292e]/80 border-slate-700' : 'bg-white/80 border-slate-200'}`}>
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => setCurrentView('landing')}>
-          <div className={`p-3 border rounded-xl shadow-inner ${darkMode ? 'bg-slate-900 border-slate-700' : 'bg-slate-100 border-slate-200'}`}>
-            <Cpu className="w-8 h-8 text-[#4285F4]" />
+          <div className={`p-2 border rounded-xl shadow-inner flex items-center justify-center ${darkMode ? 'bg-slate-900 border-slate-700' : 'bg-slate-100 border-slate-200'}`}>
+            <img src="/logo.png" alt="FaultSense Logo" className="w-10 h-10 object-contain" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className={`text-2xl font-bold tracking-wider ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                <span className="text-[#4285F4]">b</span><span className="text-[#EA4335]">e</span><span className="text-[#FBBC05]">t</span><span className="text-[#34A853]">a</span> 1.0
-              </h1>
-              <span className="text-[10px] bg-blue-500/10 border border-blue-300 text-[#4285F4] font-bold px-2 py-0.5 rounded uppercase tracking-widest">ARIZA TAHMİN</span>
-            </div>
+              <h1
+                className={`text-2xl font-bold tracking-wide ${
+                  darkMode ? "text-blue-400" : "text-blue-600"
+                }`}
+            >
+              FaultSense
+            </h1>
+
+            <span className="text-[10px] bg-blue-500/10 border border-blue-300 text-blue-500 font-bold px-2 py-0.5 rounded uppercase tracking-widest">
+              AI
+            </span>
+          </div>
             <p className={`text-xs font-medium ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Kök Neden Analizi ve Arıza Tahmin Platformu</p>
           </div>
         </div>
@@ -157,6 +178,7 @@ export default function App() {
             setActiveTab={setActiveTab}
             uploadedFile={uploadedFile}
             setUploadedFile={setUploadedFile}
+            loading={loading}
           />
         )}
       </AnimatePresence>

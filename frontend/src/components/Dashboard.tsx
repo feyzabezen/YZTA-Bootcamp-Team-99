@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import Papa from 'papaparse';
 import { Activity, Upload, CheckCircle, FileText, ShieldAlert, AlertTriangle, Sparkles, Gauge } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 declare const Plotly: any;
 
@@ -36,6 +37,7 @@ interface DashboardProps {
   setActiveTab: (tab: string) => void;
   uploadedFile: string | null;
   setUploadedFile: (file: string | null) => void;
+  loading: boolean;
 }
 
 export default function Dashboard({ 
@@ -47,7 +49,8 @@ export default function Dashboard({
   activeTab, 
   setActiveTab, 
   uploadedFile, 
-  setUploadedFile 
+  setUploadedFile ,
+  loading
 }: DashboardProps) {
   const [timeArray, setTimeArray] = useState<string[]>([]);
   const [tempArray, setTempArray] = useState<number[]>([]);
@@ -196,8 +199,22 @@ export default function Dashboard({
                 <label className="block text-xs font-semibold mb-1.5">Takım Aşınması (dk)</label>
                 <input type="number" name="toolWear" value={formData.toolWear} onChange={handleChange} className={`w-full rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-all font-mono ${darkMode ? 'bg-slate-900 border-slate-700 text-slate-100 focus:border-[#4285F4]' : 'bg-slate-100 border-slate-300 text-slate-900 focus:border-blue-500'}`} />
               </div>
-              <button type="submit" className="w-full bg-[#4285F4] hover:bg-[#3367D6] text-white text-sm font-bold py-3.5 rounded-xl shadow-md transition-all cursor-pointer">
-                <span className="flex items-center justify-center gap-2"><Sparkles className="w-4 h-4" /> Arıza Riskini Hesapla</span>
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="w-full bg-[#4285F4] hover:bg-[#3367D6] disabled:bg-blue-400 disabled:cursor-not-allowed text-white text-sm font-bold py-3.5 rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
+              >
+                {loading ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span>Ajanlar Analiz Ediyor...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-4 h-4" /> 
+                    <span>Arıza Riskini Hesapla</span>
+                  </>
+                )}
               </button>
             </form>
           </div>
@@ -254,8 +271,13 @@ export default function Dashboard({
               <div className={`space-y-4 border rounded-2xl p-5 block shadow-inner ${darkMode ? 'bg-slate-900 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
                 <div>
                   <h3 className="text-xs font-bold text-[#4285F4] uppercase tracking-widest mb-2 flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#4285F4]"></span> Analist Ajan Yorumu</h3>
-                  <p className={`text-sm leading-relaxed border p-3 rounded-xl font-medium ${darkMode ? 'bg-slate-950 border-slate-800 text-slate-300' : 'bg-white border-slate-200 text-slate-700'}`}>{mockResult.analystReport}</p>
+                  <div className={`text-sm leading-relaxed border p-4 rounded-xl font-medium prose dark:prose-invert max-w-none ${darkMode ? 'bg-slate-950 border-slate-800 text-slate-300' : 'bg-white border-slate-200 text-slate-700'}`}>
+                    <ReactMarkdown>{mockResult.analystReport}</ReactMarkdown>
+                  </div>
+                  {/* ------------------------------- */}
+                
                 </div>
+
                 <div>
                   <h3 className="text-xs font-bold text-[#34A853] uppercase tracking-widest mb-2 flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#34A853]"></span> Bakım Uzmanı Eylem Planı</h3>
                   <div className={`border p-3 rounded-xl space-y-2 ${darkMode ? 'bg-slate-950 border-slate-800 text-slate-300' : 'bg-white border-slate-200 text-slate-700'}`}>

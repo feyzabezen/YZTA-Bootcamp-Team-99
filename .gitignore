@@ -1,52 +1,13 @@
-# Byte-compiled / optimized / DLL files
+# Python & Byte-compiled files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-.pytest_cache/
-cover/
-
-# Environments
+# Environments (Sanal Ortamlar)
 .env
-.envrc
+.env*
+!.env.example
 .venv
 venv/
 ENV/
@@ -54,30 +15,26 @@ env/
 env.bak/
 venv.bak/
 
-# IDEs
+# Node.js & Frontend Bağımlılıkları / Derleme Çıktıları
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/bun.lock
+package-lock.json
+
+# IDEs & Editorler
 .idea/
 .vscode/
 *.swp
+*.swo
 
-# OS / misc
+# OS & Loglar
 .DS_Store
+Thumbs.db
 *.log
-<<<<<<< Updated upstream
 
-# Jupyter
+# Jupyter & Cache
 .ipynb_checkpoints/
-
-# Python tools
 .mypy_cache/
-.pyre/
-.pytype/
+.pytest_cache/
 .ruff_cache/
-=======
-.env*
-!.env.example
-venv/ 
-__pycache__/ 
-*.pyc 
->>>>>>> Stashed changes
-frontend/node_modules/ 
-frontend/.vite/ 

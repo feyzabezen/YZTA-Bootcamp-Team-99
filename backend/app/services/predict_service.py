@@ -139,7 +139,7 @@ def predict_machine(data: PredictionRequest, db: Session = None):
             shap_dict = {f: 0.1 for f in FEATURE_NAMES}
 
         sensor_data_str = (
-            f"Tip: {data.type}, Hava Sıcaklığı: {data.air_temperature}°C, "
+            f"Tip: {data.type}, Hava Sıcaklığı: {data.air_temperature} K, "
             f"Proses Sıcaklığı: {data.process_temperature}°C, Dönüş Hızı: {data.rotational_speed} RPM, "
             f"Tork: {data.torque} Nm, Takım Aşınması: {data.tool_wear} dk"
         )

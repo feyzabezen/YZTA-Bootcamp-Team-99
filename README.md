@@ -9,7 +9,7 @@
 | :--- | :--- | :---: |
 | Nursenem Zirek | Scrum Master & AI developer | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/nrsenemzrk) |
 | Feyza Bezen | Product Owner & Data Scientist | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/feyzabezen) |
-| Emre Aldemir | AI Developer & Fronted | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emre-aldemir-1b2301293/) |
+| Emre Aldemir | AI Developer & Frontend | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emre-aldemir-1b2301293/) |
 | Özlem Kınaş | Data Scientist  | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/ozlemkinas) |
 
 # Product Name

@@ -832,44 +832,48 @@ https://trello.com/b/01mPbDud/team99
 ---
 
 ### Expected Points
-Target: 
+Target: 90
 
 <br>
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
 <br>
 
-Hedef: 
+Hedef: 90
 </details>
 
 ---
 
 ---
 
-### Point Completion Logic
-<!-- Sprint 3 puan tamamlama mantığı açıklaması buraya gelecek -->
-
-
-<br>
-<details>
-<summary><b>🇹🇷 Turkish Version </b></summary>
-<br>
-
-<!-- Sprint 3 puan tamamlama mantığı Türkçe açıklaması buraya gelecek -->
-</details>
 
 ---
 
 # Backlog Distribution Strategy
-<!-- Sprint 3 görev dağılım stratejisi buraya gelecek -->
+Throughout Sprint 3, the product backlog was distributed among team members according to their designated roles and technical domains. The primary objective was to freeze new feature development and execute deployment, code refactoring, system validation, and final project documentation.
+
+Feyza (Product Owner & Data Scientist 1) focused on project alignment and management documentation. She updated the public GitHub README repository to strictly align with jury evaluation rubrics (Originality, Problem-Solution Match, and AI Elements). She embedded public Trello Kanban board access links and authored strategic responses for the final submission form.
+
+Özlem (Data Scientist 2) took full ownership of codebase quality and refactoring. She thoroughly audited all Python modules, applying PEP8 formatting standards and adding detailed docstrings across all data science, model loading, and feature engineering scripts to secure clean-code bonus evaluation points.
+
+Nursenem (Scrum Master & AI Engineer 1) managed the deployment and DevOps pipeline. She containerized and deployed the FastAPI backend and SQLite database layer onto cloud hosting services (Render / Hugging Face Spaces), verifying public URL accessibility and running end-to-end integration test suites across live endpoints.
+
+Emre (AI Engineer 2 & Frontend) led the user interface polish and final media delivery. He resolved frontend display edge cases, connected Streamlit directly to the production API, and produced the mandatory 3-minute YouTube walkthrough video detailing system architecture, live sensor inputs, and AI agent output cards.
 
 
 <br>
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
 <br>
+Sprint 3 boyunca ürün havuzu (product backlog), takım üyelerinin rollerine ve teknik uzmanlık alanlarına göre dağıtılmıştır. Temel hedef, yeni özellik geliştirmeyi durdurup canlıya alma, kod temizliği, sistem doğrulaması ve nihai proje dökümantasyonunu gerçekleştirmek olmuştur.
 
-<!-- Sprint 3 görev dağılım stratejisi Türkçe açıklaması buraya gelecek -->
+Feyza (Product Owner & Data Scientist 1) proje uyumu ve yönetimsel dökümantasyona odaklanmıştır. GitHub README dökümanını jüri değerlendirme kriterlerine (Özgünlük, İhtiyaç-Çözüm Eşleşmesi ve Yapay Zeka Öğeleri) tam uyumlu hale getirmiş, herkese açık Trello Kanban tahtası bağlantılarını eklemiş ve teslim formu stratejik yanıtlarını hazırlamıştır.
+
+Özlem (Data Scientist 2) kod kalitesi ve refactoring sorumluluğunu üstlenmiştir. Tüm Python modüllerini tarayarak PEP8 standartlarını uygulamış; veri bilimi, model yükleme ve öznitelik mühendisliği betiklerine detaylı docstring'ler ekleyerek ekstra temiz kod puanlarını güvenceye almıştır.
+
+Nursenem (Scrum Master & AI Engineer 1) canlıya alma ve DevOps süreçlerini yönetmiştir. FastAPI backend ve SQLite veri tabanını bulut platformlarına (Render / Hugging Face Spaces) deploy etmiş, canlı URL erişilebilirliğini doğrulamış ve uçtan uca entegrasyon testlerini koşturmuştur.
+
+Emre (AI Engineer 2 & Frontend) kullanıcı arayüzü cilalaması ve medya teslimatına liderlik etmiştir. Arayüzdeki kenar durum hatalarını gidermiş, Streamlit'i canlı API'ye bağlamış ve sistem mimarisi ile yapay zeka ajanlarını gösteren 3 dakikalık YouTube videosunu hazırlamıştır.
 </details>
 
 # Daily Scrum Notes 
@@ -879,43 +883,56 @@ https://docs.google.com/document/d/19cnu_cjRnAx8ND357Z13TR47gilAkeUyJaZNY7eKTxg/
 
 # Product Status
 
-<!-- Sprint 3 ürün durumu maddeleri buraya gelecek -->
-
-
----
+* **Production Cloud Deployment:** The asynchronous `FastAPI` application layer and `SQLite` telemetry store were successfully containerized and deployed to cloud infrastructure (Render / Hugging Face Spaces), establishing live, publicly accessible endpoints.
+* **PEP8 & Clean Code Refactoring:** Executed repository-wide code refactoring adhering strictly to PEP8 standards, adding comprehensive `docstring` documentation across all modules, classes, and functions to satisfy corporate code quality criteria.
+* **Live API Deserialization:** Transitioned the active prediction pipeline to production mode, dynamically loading serialized `lgb_binary_model.pkl` and multi-class artifacts using `joblib.load` upon API startup.
+* **Multi-Agent Production Integration:** Orchestrated the `CrewAI` dual-agent framework (Analyst Agent & Maintenance Expert Agent) within the live backend to process incoming telemetry, execute SHAP evaluations, and output Turkish maintenance action plans.
+* **Streamlit Live Endpoint Connection:** Reconfigured the `Streamlit` dashboard user interface to route all single-instance and bulk CSV predictions directly to the production API endpoints.
+* **Interactive Telemetry Visualization:** Maintained high-performance dynamic chart rendering using `Plotly`, enabling real-time visual tracking of process temperature, rotational speed, torque, and tool wear degradation.
+* **Video Demonstration Delivery:** Produced and published a mandatory 3-minute YouTube demonstration video featuring live system execution, system architecture walkthrough, AI agent orchestration, and audio narration.
+* **Jury-Aligned Documentation:** Finalized the public `GitHub` README repository and embedded accessible `Trello` project tracking boards, aligning all content with evaluation rubrics (Originality, Problem-Solution fit, AI Integration).
 
 <details>
-<summary><b>🇹🇷 Turkish Version </b></summary>
+<summary><b>TR Turkish Version</b></summary>
 
-<!-- Sprint 3 ürün durumu maddeleri Türkçe buraya gelecek -->
-
+### Product Status (Ürün Durumu)
+* **Bulut Ortamında Canlıya Alma:** Asenkron `FastAPI` uygulama katmanı ve `SQLite` telemetri veri tabanı bulut altyapısına (Render / Hugging Face Spaces) dağıtılarak herkese açık canlı API uçları oluşturuldu.
+* **PEP8 ve Clean Code Düzenlemesi:** Kod tabanının tamamı PEP8 standartlarına göre refactor edildi; tüm fonksiyon, sınıf ve modüllere detaylı `docstring` dökümantasyonları eklenerek kod kalitesi kriterleri sağlandı.
+* **Canlı API Model Yüklemesi:** Tahmin mekanizması prodüksiyon moduna geçirildi; API başlatıldığında serileştirilmiş `lgb_binary_model.pkl` ve çoklu sınıflandırma modelleri `joblib.load` ile dinamik olarak belleğe yüklendi.
+* **Çoklu-Ajan Canlı Entegrasyonu:** Live backend içerisinde `CrewAI` çift ajan mimarisi ("Analist Ajan" & "Bakım Uzmanı Ajan") orkestre edilerek sensör verilerinden Türkçe bakım eylem planları üretilmesi sağlandı.
+* **Streamlit Canlı API Bağlantısı:** `Streamlit` kullanıcı arayüzü, hem tekil veri girişlerini hem de toplu CSV analizlerini doğrudan canlı prodüksiyon API uçlarına yönlendirecek şekilde güncellendi.
+* **Etkileşimli Sensör Görselleştirme:** `Plotly` kütüphanesi kullanılarak işlem sıcaklığı, dönme hızı, tork ve takım aşınması verilerinin anlık grafiklerle izlenmesi sağlandı.
+* **Video Tanıtım Teslimatı:** Sistem mimarisini, canlı sensör analizini ve yapay zeka ajanlarının çalışmasını içeren zorunlu 3 dakikalık YouTube tanıtım videosu kurgulanıp yayınlandı.
+* **Jüri Uyumlu Dökümantasyon:** Public `GitHub` README dökümanı ve erişilebilir `Trello` süreç tahtası jüri değerlendirme kriterlerine (Özgünlük, İhtiyaç-Çözüm, Yapay Zeka Öğeleri) göre tamamlandı.
 </details>
 
 # Sprint Review 
-<!-- Sprint 3 Review metni buraya gelecek -->
+By the end of Sprint 3, the Predictive Maintenance and Root Cause Analysis System reached full product maturity and was successfully deployed into production. The primary focus of this sprint was feature freeze, quality assurance, code refactoring to PEP8 standards, robust documentation, and public deployment. The FastAPI backend and SQLite telemetry database were deployed to production on cloud infrastructure (Render / Hugging Face Spaces), enabling public API accessibility. Clean code principles were rigorously applied across the entire codebase, incorporating exhaustive inline docstrings and modular structures to ensure high maintainability and earn maximum evaluation bonus points (+15 pts). The Streamlit frontend interface was seamlessly reconfigured to consume live production API endpoints, rendering dynamic Plotly telemetry visualizations and AI-generated maintenance action plans. Finally, a comprehensive 3-minute video presentation and an evaluation-aligned GitHub repository were completed, delivering an end-to-end operational platform.
 
 
 <br>
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
 <br>
-
-<!-- Sprint 3 Review Türkçe metni buraya gelecek -->
+Sprint 3'ün sonunda, Kestirimci Bakım ve Kök Neden Analiz Sistemi tam ürün olgunluğuna ulaşmış ve başarıyla canlıya (production) alınmıştır. Bu sprintin temel odağı; yeni özellik eklemeyi durdurmak (feature freeze), kalite güvencesi, PEP8 standartlarında kod temizliği (refactoring), kapsamlı dökümantasyon ve canlı dağıtım olmuştur. FastAPI backend ve SQLite telemetri veri tabanı bulut altyapısına (Render / Hugging Face Spaces) deploy edilerek kamuya açık API erişimi sağlanmıştır. Clean code prensipleri tüm kod tabanında titizlikle uygulanmış, yüksek sürdürülebilirlik sağlamak ve jüriden ekstra puan (+15 puan) alabilmek adına modüler yapılar ve kod içi docstring dökümantasyonları tamamlanmıştır. Streamlit ön yüz arayüzü, canlı API uçlarını tüketecek şekilde yeniden yapılandırılmış; dinamik Plotly görselleştirmeleri ve yapay zeka tarafından üretilen Türkçe bakım eylem planları ekrana entegre edilmiştir. Son olarak, 3 dakikalık tanıtım videosu ve değerlendirme kriterlerine tam uyumlu GitHub reposu tamamlanarak uçtan uca çalışan kurumsal bir platform teslim edilmiştir.
 </details>
 
 # Sprint Retrospective
-<!-- Sprint 3 Retrospective metni buraya gelecek -->
+Sprint 3 was an execution-focused final sprint dedicated to deployment, polishing, and delivery. Team members operated with high synergy, finalizing the transition from local development to a live production environment without introducing scope creep.
+
+Consistent communication and early API mocking established in prior sprints allowed the frontend and AI layers to integrate effortlessly with the cloud-hosted backend. The team successfully resolved production environment constraints, such as memory limits and dependency overheads, by optimizing requirements.txt and implementing efficient payload serialization. For future initiatives, the team identified the benefit of embedding automated code linting (such as flake8 or black) directly into early CI/CD pipelines to streamline end-of-project refactoring.
+
+Overall, Sprint 3 successfully fulfilled all project deliverables, achieving a fully operational, clean-coded, and live-deployed enterprise AI solution ready for evaluation.
 
 
 <br>
 <details>
 <summary><b>🇹🇷 Turkish Version </b></summary>
 <br>
+Sprint 3, canlıya alma, rötuş yapma ve teslimat odaklı bir kapanış sprinti olarak gerçekleşmiştir. Takım üyeleri yüksek bir sinerji ile çalışmış, kapsam esnemelerine (scope creep) izin vermeden yerel geliştirme ortamından canlı prodüksiyon ortamına geçişi başarıyla tamamlamıştır.
 
-<!-- Sprint 3 Retrospective Türkçe metni buraya gelecek -->
+Önceki sprintlerde kurulan düzenli iletişim ve sahte (mock) API yapısı, ön yüz ve yapay zeka katmanlarının bulutta barındırılan backend ile zahmetsizce entegre olmasını sağlamıştır. Canlı ortamdaki bellek limitleri ve bağımlılık yükleri, requirements.txt dosyasının optimize edilmesi ve veri iletiminin hafifletilmesi ile çözülmüştür. Gelecek projeler için takım, proje sonundaki refactoring yükünü en aza indirmek adına otomatik kod tarama (flake8, black) araçlarının en baştan CI/CD süreçlerine dahil edilmesi gerektiğini kararlaştırmıştır.
+
+Genel olarak Sprint 3, tüm proje teslimatlarını başarıyla karşılamış; değerlendirmeye hazır, tam fonksiyonel, temiz koda sahip ve canlıda çalışan bir yapay zeka çözümü ortaya koymuştur.
 </details>
 
-## Product Increment / Technical Performance:
-```text
-[INFO] Sprint 3 Log ve Teknik Performans Çıktılarınızı Buraya Yapıştırabilirsiniz...
-```

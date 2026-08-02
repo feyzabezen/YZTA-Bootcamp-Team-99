@@ -7,8 +7,9 @@ from app.schemas.predict_schema import PredictionRequest
 from app.agents.agents import MaintenanceAgents
 from app.agents.tasks import MaintenanceTasks
 from app.models.prediction import PredictionModel
+from app.services.feature_engineering import ozellik_muhendisligi
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 MODEL_PATH = BASE_DIR / "models" / "lgb_binary_model.pkl"
 
 # Not: Eğer model dosyası yoksa veya yüklenemiyorsa esnek hata yönetimi ekledik
@@ -56,9 +57,21 @@ def predict_machine(data: PredictionRequest, db: Session = None):
     torque_s = _scale(data.torque, "torque")
     wear_s = _scale(data.tool_wear, "tool_wear")
 
-    temperature_diff = proc_s - air_s
-    power = torque_s * rpm_s
-    tool_wear_torque = wear_s * torque_s
+    # Scale edilmiş ham değerlerden, eğitimde kullanılanla AYNI (tek/merkezi
+    # kaynaktan gelen) özellik mühendisliği fonksiyonuyla türetilmiş
+    # özellikleri (Temperature_Diff, Power, Tool_Wear_Torque) hesaplıyoruz.
+    raw_df = pd.DataFrame([{
+        "Air temperature [K]": air_s,
+        "Process temperature [K]": proc_s,
+        "Rotational speed [rpm]": rpm_s,
+        "Torque [Nm]": torque_s,
+        "Tool wear [min]": wear_s,
+    }])
+    engineered_df = ozellik_muhendisligi(raw_df)
+
+    temperature_diff = float(engineered_df["Temperature_Diff"].iloc[0])
+    power = float(engineered_df["Power"].iloc[0])
+    tool_wear_torque = float(engineered_df["Tool_Wear_Torque"].iloc[0])
 
     features = [[
         type_encoded,

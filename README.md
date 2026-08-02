@@ -13,7 +13,13 @@
 | Özlem Kınaş | Data Scientist  | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/ozlemkinas) |
 
 # Product Name
-*To be decided.*
+<div align="center">
+  <h2>FaultSense AI</h2>
+</div>
+
+<p align="center">
+<img width="250" height="250" alt="logo" src="https://github.com/user-attachments/assets/5f52efb1-5d4e-42b2-9d92-355d3dff5eb3" />
+</p>
 
 ---
 
